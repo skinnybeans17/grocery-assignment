@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>New Store</h1>
+
+<form method="POST" action="{{ url_for('main.new_store') }}">
+    {% include 'partials/store_form.html' %}
+</form>
+
+
+{% endblock %}

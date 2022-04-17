@@ -1,0 +1,17 @@
+{{ form.csrf_token }}
+<fieldset>
+    <legend>Please enter this store's information:</legend>
+    {{form.title.label}}
+    {{form.title}}
+    
+    {{form.address.label}}
+    {{form.address}}
+
+    <ul>
+        {% for error in form.title.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+    </ul>
+
+    {{form.submit}}
+</fieldset>

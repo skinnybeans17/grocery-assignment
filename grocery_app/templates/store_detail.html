@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Store - {{ store.title }}</h1>
+<p>Made by {{ store.created_by.username }}</p>
+<strong>Address:</strong> {{ store.address }}
+
+<h2>Items</h2>
+
+<div class="items">
+    {% for item in store.items %}
+    <div class="item-details">
+        <a href="/item/{{ item.id }}"><img src="{{ item.photo_url }}" alt="{{ item.name }}" width="200px">
+        <p><strong>{{ item.name }}</strong></p></a>
+        <p><strong>Price: ${{ item.price }}</strong></p>
+    </div>
+    {% endfor %}
+</div>
+
+
+<h2>Edit Store</h2>
+
+<form method="POST" action="{{ url_for('main.store_detail', store_id=store.id) }}">
+    {% include 'partials/store_form.html' %}
+</form>
+
+{% endblock %}
