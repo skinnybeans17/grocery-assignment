@@ -65,7 +65,6 @@ def store_detail(store_id):
     store = GroceryStore.query.filter_by(id=store_id).one()
     form = GroceryStoreForm(obj=store)
 
-    print(store.id)
     if form.validate_on_submit():
         store.title = form.title.data,
         store.address = form.address.data
