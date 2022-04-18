@@ -66,9 +66,12 @@ def store_detail(store_id):
     form = GroceryStoreForm(obj=store)
 
     if form.validate_on_submit():
-        store.title = form.title.data,
+        store.title = form.title.data
         store.address = form.address.data
-
+        print("************")
+        print(store)
+        print(store.title)
+        print(store.address)
         db.session.add(store)
         db.session.commit()
         flash('The store has been updated successfully.')
@@ -89,7 +92,10 @@ def item_detail(item_id):
         item.category = form.category.data
         item.photo_url = form.photo_url.data
         item.store = form.store.data
-
+        print("************")
+        print(item)
+        print(item.price)
+        print(item.category)
         db.session.add(item)
         db.session.commit()
         flash("The item has been updated successfully.")

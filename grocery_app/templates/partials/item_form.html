@@ -1,0 +1,40 @@
+{{ form.csrf_token }}
+<fieldset>
+    <legend>Make updates to an Item</legend>
+    {{form.name.label}}
+    {{form.name}}
+    <ul>
+        {% for error in form.name.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {{form.price.label}}
+    {{form.price}}
+    <ul>
+        {% for error in form.price.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {{form.category.label}}
+    {{form.category}}
+    <ul>
+        {% for error in form.category.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {{form.photo_url.label}}
+    {{form.photo_url}}
+    <ul>
+        {% for error in form.photo_url.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {{form.store.label}}
+    {{form.store}}
+    <ul>
+        {% for error in form.store.errors %}
+            <li class="error">{{ error }}</li>
+        {% endfor %}
+    </ul>
+    {{form.submit}}
+</fieldset>
